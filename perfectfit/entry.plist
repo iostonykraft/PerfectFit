@@ -1,0 +1,10 @@
+{
+    entry = {
+	bundle = perfectfit;
+	cell = PSLinkCell;
+	detail = perfectfitListController;
+	icon = perfectfit.png;
+	isController = 1;
+	label = PerfectFit;
+    };
+}

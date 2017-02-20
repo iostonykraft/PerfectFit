@@ -1,0 +1,10 @@
+Package: com.tonykraft.perfectfit
+Name: PerfectFit
+Depends: mobilesubstrate, firmware (>= 8.0), applist, com.rpetrich.rocketbootstrap (>= 1.0.3)
+Version: 1.0
+Architecture: iphoneos-arm
+Description: Force apps to fit your screen!
+Depiction: http://iostonykraft.github.io/depictions/com.tonykraft.perfectfit.html
+Maintainer: Tony Kraft <iostonykraft@gmail.com>
+Author: Tony Kraft <iostonykraft@gmail.com>
+Section: Tweaks
