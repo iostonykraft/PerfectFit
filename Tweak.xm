@@ -21,7 +21,16 @@ static NSDictionary *settings;
 
 %hook SBApplication
 
-- (bool)_supportsApplicationType:(int)type 
+- (bool)supportsApplicationType:(int)type 
+{
+    NSString *key = [@"enabled-" stringByAppendingString:self.bundleIdentifier ?: @""];
+    if ([[settings objectForKey:key] boolValue]) {
+        return YES;
+    }
+    return %orig;
+}
+
+- (bool)_supportsApplicationType:(int)type // this was renamed for some reason on iOS 10, had to copypasta the method but it should be okay for older versions
 {
     NSString *key = [@"enabled-" stringByAppendingString:self.bundleIdentifier ?: @""];
     if ([[settings objectForKey:key] boolValue]) {
