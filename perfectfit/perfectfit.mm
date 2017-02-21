@@ -34,6 +34,10 @@
 -(void)paypal {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=MMVWTGG8SRESU&lc=US&item_name=PerfectFit%20Tweak&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted"]];
 }
+- (void)credits {
+UIAlertView *alert1 = [[UIAlertView alloc]initWithTitle:@"Credits" message:@"Thanks to /u/Topbrowse for the icon!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+[alert1 show];
+}
 
 @end
 

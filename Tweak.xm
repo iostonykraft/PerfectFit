@@ -30,7 +30,16 @@ static NSDictionary *settings;
     return %orig;
 }
 
-- (bool)_supportsApplicationType:(int)type // this was renamed for some reason on iOS 10, had to copypasta the method but it should be okay for older versions
+- (long long)_classicModeFromSplashBoard
+{
+    NSString *key = [@"compatibility-" stringByAppendingString:self.bundleIdentifier ?: @""];
+    if ([[settings objectForKey:key] boolValue]) {
+        return 2;
+    }
+    return %orig;
+}
+
+/*- (bool)_supportsApplicationType:(int)type // this was renamed for some reason on iOS 10, had to copypasta the method but it should be okay for older versions
 {
     NSString *key = [@"enabled-" stringByAppendingString:self.bundleIdentifier ?: @""];
     if ([[settings objectForKey:key] boolValue]) {
@@ -42,7 +51,7 @@ static NSDictionary *settings;
 - (bool)classicAppScaled // maybe check if app is scaled
 {
     return %orig;
-}
+}*/
 
 - (bool)_disablesClassicMode 
 {
@@ -92,7 +101,7 @@ static NSDictionary *settings;
 
 %hook SBApplicationInfo 
 
-- (bool)_supportsApplicationType:(int)type 
+/*- (bool)_supportsApplicationType:(int)type 
 {
     NSString *key = [@"enabled-" stringByAppendingString:self.bundleIdentifier ?: @""];
     if ([[settings objectForKey:key] boolValue]) {
@@ -100,7 +109,7 @@ static NSDictionary *settings;
     }
     return %orig;
 }
-
+*/
 %end
 
 static void LoadSettings(void)

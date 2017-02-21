@@ -9,6 +9,8 @@
 			<string>PSGroupCell</string>
 			<key>label</key>
 			<string>General</string>
+			<key>footerText</key>
+			<string>For apps that look distorted when enabled, try Compatibility Mode instead.</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -23,6 +25,28 @@
 			<string>1</string>
 			<key>ALSettingsKeyPrefix</key>
 			<string>enabled-</string>
+			<key>ALSettingsDefaultValue</key>
+			<string>0</string>
+			<key>ALSettingsPath</key>
+			<string>/var/mobile/Library/Preferences/com.tonykraft.perfectfit.plist</string>
+			<key>ALSingleEnabledMode</key>
+			<false/>
+			<key>ALChangeNotification</key>
+			<string>com.tonykraft.perfectfit.prefschanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSLinkCell</string>
+			<key>bundle</key>
+			<string>AppList</string>
+			<key>isController</key>
+			<string>1</string>
+			<key>label</key>
+			<string>Compatibility Mode</string>
+			<key>ALAllowsSelection</key>
+			<string>1</string>
+			<key>ALSettingsKeyPrefix</key>
+			<string>compatibility-</string>
 			<key>ALSettingsDefaultValue</key>
 			<string>0</string>
 			<key>ALSettingsPath</key>
@@ -59,6 +83,14 @@
 			<string>Donate</string>
 			<key>icon</key>
 			<string>paypal@2x.png</string>
+		</dict>
+			<dict>
+       		<key>cell</key>
+       		<string>PSButtonCell</string>
+       		<key>action</key>
+       		<string>credits</string>
+       		<key>label</key>
+       		<string>Credits</string>
 		</dict>
 		</array>
 	<key>title</key>
