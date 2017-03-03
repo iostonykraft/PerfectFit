@@ -39,7 +39,7 @@ static NSDictionary *settings;
     return %orig;
 }
 
-/*- (bool)_supportsApplicationType:(int)type // this was renamed for some reason on iOS 10, had to copypasta the method but it should be okay for older versions
+- (bool)_supportsApplicationType:(int)type // this was renamed for some reason on iOS 10, had to copypasta the method but it should be okay for older versions
 {
     NSString *key = [@"enabled-" stringByAppendingString:self.bundleIdentifier ?: @""];
     if ([[settings objectForKey:key] boolValue]) {
@@ -51,16 +51,8 @@ static NSDictionary *settings;
 - (bool)classicAppScaled // maybe check if app is scaled
 {
     return %orig;
-}*/
-
-- (bool)_disablesClassicMode 
-{
-    NSString *key = [@"enabled-" stringByAppendingString:self.bundleIdentifier ?: @""];
-    if ([[settings objectForKey:key] boolValue]) {
-        return YES;
-    }
-    return %orig;
 }
+
 
 /* - (bool)classicAppPhoneAppRunningOnPad 
 {
